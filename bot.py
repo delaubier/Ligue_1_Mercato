@@ -1,9 +1,23 @@
+import os
 import requests
 import tweepy
 from bs4 import BeautifulSoup
 import urllib.request
 from PIL import Image
 import io
+
+# Chargement des variables d'environnement (.env)
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    if os.path.exists(".env"):
+        with open(".env", "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    k, v = line.split("=", 1)
+                    os.environ.setdefault(k.strip(), v.strip())
 
 a=1
 d=0
@@ -105,8 +119,13 @@ while T:
     for i in range(0, 25):
         ContratList.append(Contrat[i].text)
 
-    auth = tweepy.OAuthHandler("s0DW0mTxMusl3CQWWUsHnfKKa","xHl8ox2TgI3CsonxQuKMRGk8fKObANWqBO6s4Sap7qEHrn8zoj")
-    auth.set_access_token("1412102801145139200-1IceYVZLHHkKjtH08BsDLfY1UDoW3g",'wh7taYLYq8XppeCQZlfBbzFv5pVjek0uiTl5oQZProkOU')
+    consumer_key = os.getenv("TWITTER_CONSUMER_KEY")
+    consumer_secret = os.getenv("TWITTER_CONSUMER_SECRET")
+    access_token = os.getenv("TWITTER_ACCESS_TOKEN")
+    access_token_secret = os.getenv("TWITTER_ACCESS_TOKEN_SECRET")
+
+    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_token, access_token_secret)
 
     api = tweepy.API(auth)
 

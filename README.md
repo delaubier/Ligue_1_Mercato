@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![X](https://img.shields.io/badge/X-@Ligue__1__Mercato-000000.svg)](https://x.com/Ligue_1_Mercato)
 
-🌐 **Langue / Language** : **Français 🇫🇷** • [English 🇬🇧](README.en.md)
+🌐 **Language / Langue** : **English 🇬🇧** • [Français 🇫🇷](README.md)
 
 ---
 
@@ -33,11 +33,66 @@ In modern football analytics and media coverage, manually tracking official tran
 
 ## Installation
 
+### 1. Clone the repository
 ```bash
-git clone [https://github.com/delaubier/Ligue_1_Mercato.git](https://github.com/delaubier/Ligue_1_Mercato.git)
+git clone https://github.com/delaubier/Ligue_1_Mercato.git
 cd Ligue_1_Mercato
+```
 
+### 2. Install dependencies
+```bash
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 
 pip install -r requirements.txt
+```
+
+### 3. Configure Twitter API Credentials
+Create a `.env` file at the root by copying `.env.example`:
+```bash
+cp .env.example .env
+```
+
+Fill in your Twitter API keys inside `.env`:
+```env
+TWITTER_CONSUMER_KEY=your_consumer_key
+TWITTER_CONSUMER_SECRET=your_consumer_secret
+TWITTER_ACCESS_TOKEN=your_access_token
+TWITTER_ACCESS_TOKEN_SECRET=your_access_token_secret
+```
+
+---
+
+## Usage
+
+### 1. Run the Bot Locally
+Executes the continuous monitoring and posting service:
+
+```bash
+python bot.py
+```
+
+### 2. Payload / Output Example
+```json
+{
+  "status": "published",
+  "player_name": "Kylian Mbappé",
+  "from_club": "Paris Saint-Germain",
+  "to_club": "Real Madrid",
+  "transfer_fee": "Free Transfer",
+  "contract_until": "2029",
+  "tweet_id": "1800000000000000000"
+}
+```
+
+---
+
+## Cloud Deployment
+
+The repository includes a [`Procfile`](Procfile) ready for 24/7 background worker deployment on cloud platforms such as Heroku, Railway, or Render.
+
+---
+
+## License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for details.

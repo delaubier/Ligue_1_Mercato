@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![X](https://img.shields.io/badge/X-@Ligue__1__Mercato-000000.svg)](https://x.com/Ligue_1_Mercato)
 
-🌐 **Language / Langue** : **English 🇬🇧** • [Français 🇫🇷](README.md)
+🌐 **Language / Langue** : **English 🇬🇧** • [Français 🇫🇷](README.fr.md)
 
 ---
 

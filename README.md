@@ -65,24 +65,11 @@ TWITTER_ACCESS_TOKEN_SECRET=your_access_token_secret
 
 ## Usage
 
-### 1. Run the Bot Locally
+### Run the Bot Locally
 Executes the continuous monitoring and posting service:
 
 ```bash
 python bot.py
-```
-
-### 2. Payload / Output Example
-```json
-{
-  "status": "published",
-  "player_name": "Kylian Mbappé",
-  "from_club": "Paris Saint-Germain",
-  "to_club": "Real Madrid",
-  "transfer_fee": "Free Transfer",
-  "contract_until": "2029",
-  "tweet_id": "1800000000000000000"
-}
 ```
 
 ---

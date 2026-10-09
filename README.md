@@ -1,70 +1,43 @@
-# Ligue 1 Mercato ⚽🤖
+# Ligue 1 Mercato
 
-<p align="left">
-  <a href="https://x.com/Ligue_1_Mercato" target="_blank">
-    <img src="https://img.shields.io/badge/X-@Ligue__1__Mercato-000000?style=for-the-badge&logo=x&logoColor=white" alt="Compte X" />
-  </a>
-  <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.9+" />
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License" />
-</p>
+### Automated Transfer Tracking and Real-Time X/Twitter Notification Engine for Ligue 1
+
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![X](https://img.shields.io/badge/X-@Ligue__1__Mercato-000000.svg)](https://x.com/Ligue_1_Mercato)
 
 🌐 **Langue / Language** : **Français 🇫🇷** • [English 🇬🇧](README.en.md)
 
 ---
 
-Bot Twitter (X) automatique développé en Python qui détecte et publie en temps réel les officialisations de transferts de football en Ligue 1 en scrapant les données sur [Transfermarkt](https://www.transfermarkt.fr).
+An automated Python bot that monitors, parses, and broadcasts official French Ligue 1 football transfer market updates in real time using data extracted from [Transfermarkt](https://www.transfermarkt.fr).
 
-Suivez le bot en direct sur X / Twitter : **[@Ligue_1_Mercato](https://x.com/Ligue_1_Mercato)**
-
----
-
-## 📌 Fonctionnalités
-
-- **Scraping automatique** : Récupère les derniers transferts de Ligue 1 (joueur, clubs, montant ou type de transfert, âge, nationalité, etc.).
-- **Publication Twitter enrichie** : Formate et poste des annonces avec émojis (drapeau, officiel, contrat) et la photo officielle du joueur.
-- **Détection des doublons** : Évite de tweeter deux fois le même transfert.
-- **Sécurité** : Clés d'API gérées en toute sécurité via variables d'environnement (`.env`).
+Follow the bot live on X / Twitter: **[@Ligue_1_Mercato](https://x.com/Ligue_1_Mercato)**
 
 ---
 
-## 🚀 Installation
+## Features
 
-### 1. Cloner le projet
+In modern football analytics and media coverage, manually tracking official transfer announcements across multiple clubs and sources is time-consuming and prone to delays.
+
+**Ligue 1 Mercato** automates this workflow:
+- **Reduces tracking overhead by 100%** by scraping Transfermarkt continuously for instant deal detection.
+
+- **Formats rich social publications** with official player media, structured metadata (nationality, age, fee, contract duration), and tailored visuals.
+
+- **Prevents duplicate broadcasting** using a localized transaction history registry.
+
+- **Secures API credentials** via robust environment variable isolation (`.env`).
+
+---
+
+## Installation
+
 ```bash
-git clone https://github.com/delaubier/Ligue_1_Mercato.git
+git clone [https://github.com/delaubier/Ligue_1_Mercato.git](https://github.com/delaubier/Ligue_1_Mercato.git)
 cd Ligue_1_Mercato
-```
 
-### 2. Installer les dépendances
-```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+
 pip install -r requirements.txt
-```
-
-### 3. Configurer les clés Twitter
-Créez un fichier `.env` à la racine en copiant le modèle `.env.example` :
-```bash
-cp .env.example .env
-```
-
-Remplissez ensuite vos clés d'API Twitter dans le fichier `.env` :
-```env
-TWITTER_CONSUMER_KEY=votre_cle_api
-TWITTER_CONSUMER_SECRET=votre_secret_api
-TWITTER_ACCESS_TOKEN=votre_access_token
-TWITTER_ACCESS_TOKEN_SECRET=votre_access_token_secret
-```
-
----
-
-## 🏃 Utilisation
-
-Pour lancer le bot en local :
-```bash
-python bot.py
-```
-
----
-
-## ☁️ Déploiement
-
-Le projet inclut un fichier [`Procfile`](Procfile) permettant un déploiement continu en tant que *worker* sur des plateformes cloud comme Heroku, Railway ou Render.
